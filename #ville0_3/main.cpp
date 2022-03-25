@@ -54,8 +54,8 @@ void birMove()
 
 void trainMove()
 {
-    tmove  += 0.5 ;
-    if (tmove >0){
+    tmove  += 1.5 ;
+    if (tmove >-8){
         tmove = -60;
     }
     glutPostRedisplay();
@@ -203,15 +203,15 @@ void boat(float x1, float y1, float boatLength)
         glVertex2d(x4,y4);
         glVertex2d(x5,y5);
         glVertex2d(x6,y6);
-        glVertex2d(x1,y6+.7);
-        glVertex2d(x2,y3+.7);
+        glVertex2d(x1,y6+.7);//noukar shamner prostho
+        glVertex2d(x2,y3+.7);//noukar picher proshto
     glEnd();
     glColor3d(1,0,0);//noukar paler lathi
     glRectf(x5-.2,y5+1,x5+.2,y5+12);
 
     glBegin(GL_TRIANGLES);
         glColor3d(0, 4, 0);//noukar pal
-        glVertex2d(x5+.5,y5+11);
+        glVertex2d(x5+.5,y5+11);//x5= bakbe koto tuku, y5= paler height
         glVertex2d(x5+.5,y5+2.5);
         glVertex2d(x4-3,y5+2.3);
     glEnd();
@@ -234,6 +234,46 @@ void boat(float x1, float y1, float boatLength)
 void train()
 {
     glBegin(GL_QUADS);
+    //add
+    //back cabin
+    glColor3ub(158, 90, 145);
+    //top
+    glVertex2d(61,67);
+    glVertex2d(70,67);
+    glVertex2d(69,72);
+    glVertex2d(62,72);
+    //front
+    glVertex2d(61,67);
+    glVertex2d(61,65);
+    glVertex2d(70,65);
+    glVertex2d(70,67);
+    //front plate
+    glColor3ub(225, 43, 145);
+    glVertex2d(61.2,64);
+    glVertex2d(61.2,61);
+    glVertex2d(69.8,61);
+    glVertex2d(69.8,64);
+    //front plate small for aesthetics
+    glColor3ub(22, 23, 145);
+    glVertex2d(63,63);
+    glVertex2d(63,62);
+    glVertex2d(68.4,62);
+    glVertex2d(68.4,63);
+
+     //joint
+    glColor3f(1,0,0);
+    glVertex2d(65.1,61);//joint er bam side
+    glVertex2d(66.1,61);// joint er dan side
+    glVertex2d(66,58);
+    glColor3f(1,.9,.30);
+    glVertex2d(65,46);
+    //joint shadow
+    glColor3f(1,.9,0);
+    glVertex2d(64.8,61);
+    glVertex2d(65.1,61);
+    glVertex2d(65,48);
+    glVertex2d(64.7,46);
+    //done
 
     //back cabin
     glColor3ub(158, 90, 145);
@@ -308,7 +348,7 @@ void train()
     circle(0.5,0.7,62,42);
     circle(0.5,0.7,69,42);
     //front plate
-    glColor3f(1,1,1);
+    glColor3f(1,0,1);
     circle(0.5,0.7,64,37.5);
     circle(0.5,0.7,65.5,37.5);
     circle(0.5,0.7,67.3,37.5);
@@ -360,18 +400,18 @@ void boat2(float x1=92,  float y1=40)
 
         glVertex2d(x1,y1);
         glVertex2d(x6,y6);
-        glVertex2d(x6+.7,y6);
+        glVertex2d(x6+.7,y6);//vasshoman noukar pichon kona
 
         glVertex2d(x4,y4);
         glVertex2d(x5,y5);
-        glVertex2d(x5+.7,y5);
+        glVertex2d(x5+.7,y5);// vasshoman noukar shamner kona
 
         glVertex2d(x1,y1);
-        glVertex2d(x1+1,y1+2);
-        glVertex2d(x1-1,y1+2);
+        glVertex2d(x1+1,y1+2);//vasshoman noukar lathir chowra dan kona
+        glVertex2d(x1-1,y1+2);//vasshoman noukar lathir chowra bam kona
 
         glVertex2d(x4,y4);
-        glVertex2d(x4+1,y4-2);
+        glVertex2d(x4+1,y4-2); //paler nicher pataton er dag
         glVertex2d(x4-1,y4-2);
 
 
@@ -386,8 +426,8 @@ void boat2(float x1=92,  float y1=40)
     glRectf(x2-.7,y2,x6+.7,y2+.5);
     glRectf(x2-.7,y2+2,x6+.7,y2+2.5);
     glRectf(x2-.7,y2+4,x6+.7,y2+4.5);
-    glRectf(x2-.7,y2+6,x6+.7,y2+6.5);
-    glRectf(x2-.7,y2+7.5,x6+.7,y2+8);
+    glRectf(x2-.7,y2+6,x6+.7,y2+6.5);//majher dag
+    glRectf(x2-.7,y2+7.5,x6+.7,y2+8);//vasshoman noukar shamner konar lomba
 
 
     glBegin(GL_QUADS);
@@ -460,7 +500,7 @@ void movingSmallBoat()
 
 }
 
-void tree1(float x1, float y1)
+void tree1(float x1, float y1)//choto mota debdaru
 {
     float x2 = x1+4,y2=y1, x3=x1+2,y3=y1+5;
     glColor3ub(11, 70, 11);
@@ -470,7 +510,7 @@ void tree1(float x1, float y1)
         glVertex2d(x3, y3);
     glEnd();
     glBegin(GL_QUADS);
-        glVertex2d(x1+1.5, y1);
+        glVertex2d(x1+.5, y1);
         glVertex2d(x1, y1-4);
         glVertex2d(x2, y1-4);
         glVertex2d(x2-1.5, y1);
@@ -487,7 +527,7 @@ void tree1(float x1, float y1)
     glEnd();
 }
 
-void tree2(float x1, float y1)
+void tree2(float x1, float y1)//boro mota debdaru
 {
     float x2 = x1+5,y2=y1, x3=x1+2.5,y3=y1+6;
     glColor3ub(11, 50, 11);
@@ -514,7 +554,7 @@ void tree2(float x1, float y1)
     glEnd();
 }
 
-void tree3(float x1, float y1)
+void tree3(float x1, float y1)//lomba chikon debdaru
 {
     float x2 = x1+2,y2=y1, x3=x1+1,y3=y1+3;
     glColor3ub(11, 70, 11);
@@ -524,17 +564,17 @@ void tree3(float x1, float y1)
         glVertex2d(x3, y3);
     glEnd();
     glBegin(GL_QUADS);
-        glVertex2d(x1+.5, y1);
+        glVertex2d(x1+.5, y1);//patar bamer khaj kata
         glVertex2d(x1, y1-3);
         glVertex2d(x2, y1-3);
         glVertex2d(x2-.5, y1);
 
         glVertex2d(x1+.5, y1-3);
-        glVertex2d(x1, y1-6);
+        glVertex2d(x1, y1-6);//lomba
         glVertex2d(x2, y1-6);
         glVertex2d(x2-.5, y1-3);
 
-        glVertex2d(x1+.5, y1-6);
+        glVertex2d(x1+.5, y1-6);//khaj kata majher daner
         glVertex2d(x1, y1-9);
         glVertex2d(x2, y1-9);
         glVertex2d(x2-.5, y1-6);
@@ -546,10 +586,10 @@ void tree3(float x1, float y1)
 
         glColor3ub(68, 43, 2);
         glColor3ub(68, 43, 2);
-        glVertex2d(x1+.7, y1-12);
-        glVertex2d(x1+.4, y1-20);
-        glVertex2d(x2-.4, y1-20);
-        glVertex2d(x2-.7, y1-12);
+        glVertex2d(x1+.7, y1-12);//gacher kando upor
+        glVertex2d(x1+.4, y1-20);//gacher kando majhe
+        glVertex2d(x2-.4, y1-20);//nich
+        glVertex2d(x2-.7, y1-12);//lomba
     glEnd();
 }
 
@@ -2288,12 +2328,6 @@ void border()
     glRectf(99.1,99.5,99.5,1);
 }
 
-void music(char text[])
-{
-    //PlaySound(TEXT('Be.'), NULL, SND_SYNC);
-    //sndPlaySound(TEXT("Be.wmv"), SND_SYNC);
-}
-
 
 void dayMode()
 {
@@ -2428,7 +2462,7 @@ int main()
 	glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
 	glutInitWindowSize (1300, 650);
 	glutInitWindowPosition (0, -90);
-	glutCreateWindow ("Dream_Village");
+	glutCreateWindow ("#Ville");
 	init();
 	glutDisplayFunc(dayMode);
 	//glutDisplayFunc(nightMode);

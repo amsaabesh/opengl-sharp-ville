@@ -1,9 +1,0 @@
-sun color: 1507
-sun possition and shape: 1508
-falling orange color: 150
-big boat moov: 63-70
-নৌকার তলানীঃ 189
-নৌকার উপরঃ 201
-noukar paler lathi: 209
-noukar pal: 213
-train move: 55-62
